@@ -8,8 +8,8 @@ class RickAndMortyService {
         return response.json();
     }
 
-    async getAllCharactersById() {
-        const response = await fetch(API_RM.CHARACTERS_BY_ID());
+    async getAllCharactersById(id) {
+        const response = await fetch(API_RM.CHARACTERS_BY_ID(id));
         //INTERCEPTOR
         return response.json();
     }

@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export const Card = ({personaje}) => {
+export const Card = ({ personaje }) => {
     return (
         <div className="col">
             <div className="card shadow-sm">
@@ -9,17 +10,14 @@ export const Card = ({personaje}) => {
                 <h3 className="mb-0 text-dark">{personaje.name}</h3>
                 <div className="card-body">
                     <p className="card-text">
-                        Sexo:{personaje.gender}
-                        <br/>
-                        Origen:{personaje.origin.name}
-                        <br/>
-                        Estado:{personaje.status}
+                        Para más información precione en el boton detalles
                     </p>
                     <div className="d-flex justify-content-between align-items-center">
-                        <div className="btn-group">
-                            <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
-                        </div>
+
+                        <Link to={`/details/${personaje.id}`}>
+                            Detalles
+                        </Link>
+
                         <small className="text-muted">9 mins</small>
                     </div>
                 </div>
